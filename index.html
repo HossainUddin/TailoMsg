@@ -44,10 +44,10 @@
       #lockBox {
         width: 100%;
         max-width: 420px;
-        background: linear-gradient(180deg,#0b1220,#0f1724);
+        background: linear-gradient(180deg, #0b1220, #0f1724);
         border-radius: 12px;
         padding: 1.5rem;
-        box-shadow: 0 10px 30px rgba(2,6,23,0.7);
+        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.7);
         text-align: center;
         color: #e6eef8;
       }
@@ -94,54 +94,81 @@
         </div>
 
         <p id="errorMsg" class="text-red-400 mt-3 hidden">Incorrect password</p>
-        <p id="autoLockNote" class="small-note mt-3">This page auto-locks 9 hours after unlocking.</p>
+        <p id="autoLockNote" class="small-note mt-3">
+          This page auto-locks 9 hours after unlocking.
+        </p>
       </div>
     </div>
 
     <!-- Main Page (hidden while locked) -->
-    <div id="appRoot" class="w-full flex flex-col items-center">
+    <div id="appRoot" class="w-full flex flex-col items-center relative">
       <!-- Header with profile -->
       <header class="w-full mb-8 text-center flex flex-col items-center">
-        <div
-          class="w-[90%] py-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-700 rounded-full px-6"
-        >
-          <div class="flex items-center gap-4">
-            <img
-              src="https://scontent.fdac41-1.fna.fbcdn.net/v/t39.30808-6/488554186_1805720316885501_1431715006981456149_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Re1djhqfCMAQ7kNvwFr4xNO&_nc_oc=AdmXStBUaclqb0lWIAwR99n8S-zYuotXBn4gOjLv9_8fXeZequ4a2u8pAMyVgWd5go8&_nc_zt=23&_nc_ht=scontent.fdac41-1.fna&_nc_gid=-rnchB9MtPs6hdw7Mpmjrw&oh=00_AfbXANiMz6ppLoYuyLdBKbx6W0f03M1m3weFeYyoX5_v1A&oe=68E38D42"
-              alt="Profile"
-              class="w-24 h-24 rounded-full border-4 border-blue-500 shadow-lg object-cover"
-            />
-            <div class="text-left">
-              <h1 class="text-3xl sm:text-4xl font-extrabold text-white">
-                Hossain Uddin Ahamad
-              </h1>
-              <p class="text-gray-300 mt-1 flex items-center gap-3 text-sm">
-                <span class="inline-flex items-center gap-2 bg-yellow-100 text-black px-3 py-1 rounded-full">
-                  <i class="fab fa-facebook"></i>
-                  <a href="https://www.facebook.com/md.reyaan.399" target="_blank" class="underline">My Facebook</a>
-                </span>
-                <span class="inline-flex items-center gap-2 bg-gray-800 text-white px-3 py-1 rounded-full">
-                  <i class="fab fa-github"></i>
-                  <a href="https://github.com/HossainUddin" target="_blank" class="underline">My Github</a>
-                </span>
-              </p>
+        <div class="w-full bg-gray-700 px-6">
+          <div
+            class="w-[90%] py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+          >
+            <div class="flex items-center gap-4">
+              <img
+                src="Me.jpg"
+                alt="Profile"
+                class="w-24 h-24 rounded-full border-4 border-yellow-300 shadow-lg object-cover"
+              />
+              <div class="text-left">
+                <h1 class="text-2xl lg:text-4xl font-extrabold text-white pb-2">
+                  Hossain Uddin Ahamad
+                </h1>
+                <p class="text-gray-300 mt-1 flex items-center gap-3 text-sm">
+                  <span
+                    class="inline-flex items-center gap-2 bg-blue-600 text-white px-3 py-1 rounded-full"
+                  >
+                    <i class="fab fa-facebook"></i>
+                    <a
+                      href="https://www.facebook.com/md.reyaan.399"
+                      target="_blank"
+                      class="underline"
+                      >My Facebook</a
+                    >
+                  </span>
+                  <span
+                    class="inline-flex items-center gap-2 bg-gray-800 text-white px-3 py-1 rounded-full"
+                  >
+                    <i class="fab fa-github"></i>
+                    <a
+                      href="https://github.com/HossainUddin"
+                      target="_blank"
+                      class="underline"
+                      >My Github</a
+                    >
+                  </span>
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="flex items-center gap-3">
-            <button id="manualLockBtn" class="bg-red-500 text-white px-4 py-2 rounded-xl hover:bg-red-600 transition flex items-center gap-2" title="Lock now">
-              <i class="fa-solid fa-lock"></i>
-              Lock
-            </button>
+            <div class="flex items-center gap-3">
+              <button
+                id="manualLockBtn"
+                class="bg-red-500 text-white px-4 py-2 rounded-xl hover:bg-red-600 transition flex items-center gap-2"
+                title="Lock now"
+              >
+                <i class="fa-solid fa-lock"></i>
+                Lock
+              </button>
+            </div>
           </div>
         </div>
 
-        <p class="text-black mt-4 bg-sky-300 w-[80%] rounded-full py-2">Select a section or search to filter messages</p>
+        <p class="text-black mt-4 bg-orange-300 w-[80%] rounded-full py-2">
+          Select a section or search to filter messages
+        </p>
       </header>
 
       <!-- Top Controls -->
       <div class="w-full max-w-7xl px-4 border-white border-x-2">
-        <div class="flex flex-wrap gap-3 mb-4" id="headerButtons"></div>
+        <div
+          class="flex justify-center flex-wrap gap-3 mb-4"
+          id="headerButtons"
+        ></div>
         <input
           id="searchInput"
           type="text"
@@ -151,10 +178,24 @@
       </div>
 
       <!-- Messages Container -->
-      <div id="messagesContainer" class="w-full max-w-7xl px-4 border-white border-x-2 overflow-x-scroll font-bold"></div>
+      <div
+        id="messagesContainer"
+        class="w-full max-w-7xl px-4 border-white border-x-2 overflow-x-scroll font-bold"
+      ></div>
 
       <!-- Footer -->
-      <footer class="w-full mt-auto py-6 text-center border-t border-gray-300 bg-gray-700 text-white">
+      <footer
+        class="w-full mt-auto py-6 text-center border-t border-gray-300 bg-gray-700 text-white"
+      >
+        <!-- Back to Top Button -->
+        <button
+          id="backToTop"
+          class="fixed bottom-6 left-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        >
+          ↑
+        </button>
+
         &copy; 2025 Hossain Uddin Ahamad. All rights reserved.
       </footer>
     </div>
@@ -213,7 +254,7 @@
           "অর্ডার কনফার্ম করার জন্য আপনার: \n১. নাম: \n২. ফোন নম্বর: \n৩. ঠিকানা:    \nজেলার নাম -    \nথানার নাম -    \nবাসা / এলাকার নাম - \n৪. জামার সাইজ: \nদিন ম্যাম/স্যার প্লিজ.😊",
           "অর্ডার করার জন্য এই ফর্মটি পূরণ করুন।",
           "এড্রেসটি একটু ভালো করে দিন যাতে আমাদের ডেলিভারি ম্যান এর বুঝতে সহজ হয়",
-          "মেমোটি কি ঠিক আছে ম্যাম/স্যার, দয়া করে একটু দেখুন।",
+          "✨ ম্যাম/স্যার, মেমোটি কি ঠিক আছে? দয়া করে একবার দেখে নিশ্চিত করবেন। 🙏",
           "🟢 আপনার অর্ডারটি কনফার্ম করা হয়েছে। \n🔴 অর্ডার পাঠানোর পর কোনো পরিবর্তন/এক্সচেঞ্জ  করা যাবে না।\n\n🚛 ডেলিভারির সময়:\n🔸ঢাকার ভিতরে: ২-৪ দিন।\n🔸ঢাকার বাইরে: ২-৫ দিন। ইনশাআল্লাহ।\n\n❌ No Trial Option ❌\n‼️আমাদের কোনো ট্রায়াল অপসন নেই‼️\n\n🔴 ডেলিভারি ম্যান চলে আসার পর কোনো প্রকার কমপ্লেন গ্রহণযোগ্য হবেনা, আপনি যখন রিসিভ করবেন দয়া করে ডেলিভারি বয়ের সামনে অর্ডার চেক করুন। যদি কোন ত্রুটি থাকে, অনুগ্রহ করে ডেলিভারি ম্যান দিয়ে অবিলম্বে ফেরত পাঠান।\n\n🟢ডেলিভারি ম্যানের সামনে প্রোডাক্ট চেক করে বিল \nপে করবেন। 🙏\n\nThank you❤️",
         ],
         "For Delivary": [
@@ -243,6 +284,9 @@
           "Per Price :-650 tk (1 piece)\nFabric :- dubai soft silk\nDress long :-40\nHata long :-18",
           "Price :-650 tk (1 piece) \n\nFabric - sofura cotton silk \nDress ta cotton and silk er combination e toiri. khubei soft quality and summer Friendly \n\nDress long :-40\nSleeves long :-18\nAvailable size :36-46",
           "Single Kaftan Price :-865 tk (1 piece) \n\nElegant And Fashionable Kaftan! \n\nFabric- Sofura Cotton\nKaftan long - 48 \nSide Fara- 15\nGher- 30-32\nSleeves Long- 21(Fara - 3 Inches)\nGola- 7.5\nHip- 2 Inches Extra",
+
+          "Kurti price - 865/-tk (Single Kurti) \nKurti Pattern: Angarkha ( Shape Cut) \nDress size: 36 - 46 (Actual Size) \nFabric : Sofura Cotton Silk \nKurti long: 34 (Side and hip cover করবে) \nSleeves: 20 inch  \nFara: 6 inch  \nHip size: (Regular +2)",
+
           "Price - 990 tk ( co ords set) (2 piece)\n\nFabric -  (Dubai Soft Silk)\nDress Length- 39-40 inc\nSleeves:- 18\nPant length - 38",
           "Price - 990 tk ( co ords set) (2 piece)\n\nFabric - Sofura Cotton Silk \nDress ta cotton and silk er combination e toiri. khubei soft quality and summer Friendly \n\nDress Length- 39/40 inc\nSleeves:- 18\nFara:- 15/16\nGher:- 24/25\nPant length - 38",
           "3 piece Regular price: 1399 tk\n15% Discount price: 1190 tk 😍🥳\n\nFabric -  (Dubai Soft Silk)\nOrna - Shifon jorjet fabric\nDress Length- 39-40\nPant length - 38\nSleeves:- 18",
@@ -259,6 +303,7 @@
         ],
         "For Random Qsn": [
           "~ওয়ালাইকুম আসসালাম",
+          "📝 আপনি কি আমাদের এই শর্ত গুলোতে রাজি?",
           "~আসসালামুয়ালাইকুম কিভাবে সহযোগিতা করতে পারি?",
           "Ok Ma'am Your Order Is Canceled...!",
           "~ম্যাম/স্যার প্লিজ একটু সময় দিবেন চেক করে জানাচ্ছি...",
@@ -305,7 +350,7 @@
         if (!unlockedAtRaw) return false;
         const unlockedAt = parseInt(unlockedAtRaw, 10);
         if (Number.isNaN(unlockedAt)) return false;
-        return (Date.now() - unlockedAt) < LOCK_DURATION;
+        return Date.now() - unlockedAt < LOCK_DURATION;
       }
 
       function showLockScreen(reason = "") {
@@ -379,7 +424,10 @@
       setInterval(() => {
         if (!isUnlockedAndValid()) {
           // if it was visible before, lock now
-          if (lockScreen.style.display === "none" || lockScreen.style.display === "") {
+          if (
+            lockScreen.style.display === "none" ||
+            lockScreen.style.display === ""
+          ) {
             lockNow("Session expired — please unlock again");
           }
         }
@@ -396,13 +444,15 @@
           if (!messagesData[header]) return;
 
           const h1 = document.createElement("h1");
-          h1.className = "text-2xl font-bold text-white mt-6 mb-2 border-b pb-1";
+          h1.className =
+            "text-2xl font-bold text-white mt-6 mb-2 border-b pb-1";
           h1.innerText = header;
           container.appendChild(h1);
 
           messagesData[header].forEach((msg) => {
             const card = document.createElement("div");
-            card.className = "msg-card bg-white p-4 mb-3 rounded-2xl shadow flex justify-between items-center hover:shadow-xl transition";
+            card.className =
+              "msg-card bg-white p-4 mb-3 rounded-2xl shadow flex justify-between items-center hover:shadow-xl transition";
             card.innerHTML = `
               <pre class="text-gray-700 whitespace-pre-wrap">${msg}</pre>
               <button class="copy-btn text-sm bg-blue-500 text-white px-3 py-1 rounded-lg hover:bg-blue-600 transition">Copy</button>
@@ -427,14 +477,16 @@
         headerButtons.innerHTML = "";
 
         const allBtn = document.createElement("button");
-        allBtn.className = "header-btn bg-blue-500 text-white px-4 py-2 rounded-xl hover:bg-blue-600 transition";
+        allBtn.className =
+          "header-btn bg-blue-500 text-white px-4 py-2 rounded-xl hover:bg-blue-600 transition";
         allBtn.innerText = "All Messages";
         allBtn.dataset.header = "all";
         headerButtons.appendChild(allBtn);
 
         Object.keys(messagesData).forEach((header) => {
           const btn = document.createElement("button");
-          btn.className = "header-btn bg-gray-200 px-4 py-2 rounded-xl hover:bg-gray-300 transition";
+          btn.className =
+            "header-btn bg-gray-200 px-4 py-2 rounded-xl hover:bg-gray-300 transition";
           btn.innerText = header;
           btn.dataset.header = header;
           headerButtons.appendChild(btn);
@@ -460,7 +512,9 @@
 
       searchInput.addEventListener("input", () => {
         const query = searchInput.value.toLowerCase();
-        const filtered = Object.keys(messagesData).filter((h) => h.toLowerCase().includes(query));
+        const filtered = Object.keys(messagesData).filter((h) =>
+          h.toLowerCase().includes(query)
+        );
         renderMessages(filtered);
       });
 
@@ -479,5 +533,19 @@
       /********** OPTIONAL: Provide easy way to change password in code **********/
       // To change password, edit `correctPassword` above in this file.
     </script>
+    <script>
+    const btn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btn.classList.remove("hidden");
+      } else {
+        btn.classList.add("hidden");
+      }
+    });
+
+    // Start hidden
+    btn.classList.add("hidden");
+  </script>
   </body>
 </html>
